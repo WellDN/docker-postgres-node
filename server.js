@@ -1,9 +1,11 @@
 // @ts-check
 
-const { Client } = require("pg");
-const express = require("express");
+const { Client } = require("pg")
+const express = require("express")
+
 const app = express();
-const port = 8080;
+
+const port = process.env.PORT || 8080;
 
 const client = new Client({
   password: "root",
@@ -11,7 +13,7 @@ const client = new Client({
   host: "postgres",
 });
 
-app.use(express.static("public"));
+app.use(express.static("public"))
 
 app.get("/employees", async (req, res) => {
   const results = await client
