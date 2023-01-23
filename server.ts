@@ -1,7 +1,5 @@
-// @ts-check
-
-const { Client } = require("pg")
-const express = require("express")
+import { Client } from 'pg'
+import express from 'express'
 
 const app = express();
 
